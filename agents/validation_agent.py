@@ -8,10 +8,6 @@ except Exception as e:
     print(f"Error configuring Google AI. Please set your API key. {e}")
 
 async def validate_extracted_claim(extracted: Dict[str, Any], raw_text: str, file_name: str) -> Dict[str, Any]:
-    """
-    Runs domain validations on the extracted claim records using LLM reasoning.
-    Returns structured validation insights.
-    """
     model = genai.GenerativeModel('gemini-2.5-flash-lite')
 
     prompt = f"""
